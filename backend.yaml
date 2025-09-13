@@ -47,8 +47,10 @@
 
   - name: Installing Python libraries
     ansible.builtin.pip:
-      name: PyMySQL
+      name: "{{ item }}"
       executable: pip3.9
+    loop:
+    - PyMySQL
   
   - name: import mysql data
     community.mysql.mysql_db:
