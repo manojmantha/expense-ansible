@@ -26,3 +26,9 @@
     ansible.builtin.file:
       path: /app 
       state: directory
+
+  - name: Unzipping the code 
+    ansible.builtin.unarchive:
+      src: /tmp/backend.zip
+      dest: /app 
+      remote_src: yes 
